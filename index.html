@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecosysteem & 5 Kernpartners — De Moester</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        hih: {
+                            green: '#1E5939',
+                            orange: '#E35220',
+                            sand: '#F5F2EB',
+                            dark: '#2C3531',
+                            gray: '#555F5A'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Helvetica Neue', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom CSS voor 3D Flipcards -->
+    <style>
+        body {
+            background-color: #E5E0D8;
+            color: #2C3531;
+        }
+
+        .perspective-1000 { perspective: 1000px; }
+        .transform-style-3d { transform-style: preserve-3d; }
+        .backface-hidden {
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+        .rotate-y-180 { transform: rotateY(180deg); }
+
+        .flip-card-inner {
+            transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-front {
+            background-color: #FFFFFF;
+            border-top: 6px solid #1E5939;
+            border-radius: 30px 0 30px 0;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .card-back {
+            background-color: #1E5939;
+            color: #FFFFFF;
+            border-bottom: 6px solid #E35220;
+            border-radius: 30px 0 30px 0;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Kleurvariaties voor de partner-kaarten */
+        .card-front.pcgs { border-top-color: #0284c7; } /* Sky */
+        .card-back.pcgs { background-color: #0284c7; border-bottom-color: #1E5939; }
+
+        .card-front.ipso { border-top-color: #d97706; } /* Amber */
+        .card-back.ipso { background-color: #d97706; border-bottom-color: #1E5939; }
+
+        .card-front.ocmw { border-top-color: #10b981; } /* Emerald */
+        .card-back.ocmw { background-color: #10b981; border-bottom-color: #1E5939; }
+
+        .card-front.pocoloco { border-top-color: #8b5cf6; } /* Purple */
+        .card-back.pocoloco { background-color: #8b5cf6; border-bottom-color: #1E5939; }
+        
+        .card-front.mhe { border-top-color: #E35220; } /* Orange */
+        .card-back.mhe { background-color: #E35220; border-bottom-color: #1E5939; }
+    </style>
+</head>
+<body class="p-6 md:p-12 antialiased">
+
+    <!-- Header Section -->
+    <div class="max-w-7xl mx-auto mb-12">
+        <div class="bg-hih-dark text-white p-8 md:p-12 rounded-[40px_0_40px_0] shadow-2xl border-b-8 border-hih-orange relative overflow-hidden">
+            <div class="absolute -right-5 -top-5 text-white opacity-5 text-9xl">🕸️</div>
+            <div class="inline-block bg-hih-orange text-white text-xs font-bold px-4 py-1.5 rounded-full mb-4 uppercase tracking-widest">
+                Partner Ecosysteem
+            </div>
+            <h1 class="text-3xl md:text-4xl font-black mb-4 leading-tight">
+                De 5 Strategische Pijlers van De Moester
+            </h1>
+            <p class="text-hih-sand text-lg max-w-3xl leading-relaxed">
+                De tijd van geïsoleerde vzw's is voorbij. In de hedendaagse GGZ is samenwerken de enige manier om kwaliteit te bieden. Dit zijn de vijf absolute kernpartners waarmee Hand in Hand vzw de zorg 'ontschot' en vermaatschappelijkt. Hover over de kaarten voor de diepgaande GGZ-context.
+            </p>
+        </div>
+    </div>
+
+    <!-- Flipcard Grid -->
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Partner 1: PCGS -->
+        <div class="flip-card perspective-1000 w-full h-[420px]">
+            <div class="flip-card-inner relative w-full h-full">
+                <!-- Front -->
+                <div class="card-front pcgs absolute w-full h-full backface-hidden">
+                    <div class="text-5xl mb-4">🏥</div>
+                    <div class="text-xs font-bold text-[#0284c7] uppercase tracking-wider mb-2">1. Klinische & HR Partner</div>
+                    <h3 class="text-2xl font-black text-hih-dark mb-4">PCGS</h3>
+                    <p class="text-hih-gray text-sm font-semibold mb-2">(Psychiatrisch Centrum Gent-Sleidinge)</p>
+                    <p class="text-hih-gray text-xs leading-relaxed mt-4 border-t border-gray-100 pt-4">
+                        Een groot psychiatrisch ziekenhuis uit de Groep Hiëronymus dat de transitie maakt van bedden naar gemeenschapszorg.
+                    </p>
+                </div>
+                <!-- Back -->
+                <div class="card-back pcgs absolute w-full h-full backface-hidden rotate-y-180">
+                    <h4 class="text-lg font-black text-white mb-2 border-b border-white/20 pb-2">De Link met De Moester</h4>
+                    <p class="text-xs text-white/90 leading-relaxed mb-3">
+                        <strong>Wat doen ze?</strong> Sinds de hervormingen van 2021 is PCGS de officiële werkgever van het voltallige personeel in De Moester. Ze dragen de zware loonmassa.
+                    </p>
+                    <p class="text-xs text-white/90 leading-relaxed">
+                        <strong>GGZ Context:</strong> Binnen het "Artikel 107" beleid moeten ziekenhuizen de muren slopen. PCGS zet haar personeel in op ambulante plekken (zoals De Moester) om cliënten in de samenleving te houden. Jochen Van den Steen is directeur van PCGS én bestuurslid bij De Moester.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Partner 2: IPSO -->
+        <div class="flip-card perspective-1000 w-full h-[420px]">
+            <div class="flip-card-inner relative w-full h-full">
+                <!-- Front -->
+                <div class="card-front ipso absolute w-full h-full backface-hidden">
+                    <div class="text-5xl mb-4">🏠</div>
+                    <div class="text-xs font-bold text-[#d97706] uppercase tracking-wider mb-2">2. Residentiële Partner</div>
+                    <h3 class="text-2xl font-black text-hih-dark mb-4">IBW IPSO</h3>
+                    <p class="text-hih-gray text-sm font-semibold mb-2">(Initiatief Beschut Wonen)</p>
+                    <p class="text-hih-gray text-xs leading-relaxed mt-4 border-t border-gray-100 pt-4">
+                        Een gefuseerd netwerk voor begeleid wonen. Op 1 januari 2021 sloegen vzw Ipso, Deltawonen en Ithaka de handen in elkaar.
+                    </p>
+                </div>
+                <!-- Back -->
+                <div class="card-back ipso absolute w-full h-full backface-hidden rotate-y-180">
+                    <h4 class="text-lg font-black text-white mb-2 border-b border-white/20 pb-2">De Link met De Moester</h4>
+                    <p class="text-xs text-white/90 leading-relaxed mb-3">
+                        <strong>Wat doen ze?</strong> Zij beheren samen de "128 erkende plaatsen" voor beschut wonen. Zij bieden de fysieke huizen en woonbegeleiding.
+                    </p>
+                    <p class="text-xs text-white/90 leading-relaxed">
+                        <strong>GGZ Context:</strong> Wonen en dagbesteding zijn twee verschillende zaken. IPSO zorgt dat mensen een dak boven hun hoofd hebben, De Moester zorgt dat diezelfde mensen overdag niet verkommeren en zinvol werk (arbeidszorg) hebben.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Partner 3: Stad Gent / OCMW -->
+        <div class="flip-card perspective-1000 w-full h-[420px]">
+            <div class="flip-card-inner relative w-full h-full">
+                <!-- Front -->
+                <div class="card-front ocmw absolute w-full h-full backface-hidden">
+                    <div class="text-5xl mb-4">🏛️</div>
+                    <div class="text-xs font-bold text-[#10b981] uppercase tracking-wider mb-2">3. Maatschappelijke Partner</div>
+                    <h3 class="text-2xl font-black text-hih-dark mb-4">Stad Gent / OCMW</h3>
+                    <p class="text-hih-gray text-sm font-semibold mb-2">(Werk & Activering)</p>
+                    <p class="text-hih-gray text-xs leading-relaxed mt-4 border-t border-gray-100 pt-4">
+                        De lokale overheid die inzet op activering van de meest kwetsbare burgers via zogenaamde 'convenanten'.
+                    </p>
+                </div>
+                <!-- Back -->
+                <div class="card-back ocmw absolute w-full h-full backface-hidden rotate-y-180">
+                    <h4 class="text-lg font-black text-white mb-2 border-b border-white/20 pb-2">De Link met De Moester</h4>
+                    <p class="text-xs text-white/90 leading-relaxed mb-3">
+                        <strong>Wat doen ze?</strong> Het OCMW financiert de instructeurs in de ateliers (hout, tuin, keuken) via langdurige contracten. Ze sturen ook leefloon-cliënten door naar De Moester.
+                    </p>
+                    <p class="text-xs text-white/90 leading-relaxed">
+                        <strong>GGZ Context:</strong> Arbeidsmatige Activiteiten (AMA) is bedoeld voor wie niet (meer) aankan in de harde, reguliere economie. Hier werkt de 'psychiatrie' naadloos samen met 'armoedebestrijding', exact zoals het "ToekomstZorg"-beleid het vraagt.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Partner 4: Poco Loco -->
+        <div class="flip-card perspective-1000 w-full h-[420px]">
+            <div class="flip-card-inner relative w-full h-full">
+                <!-- Front -->
+                <div class="card-front pocoloco absolute w-full h-full backface-hidden">
+                    <div class="text-5xl mb-4">☕</div>
+                    <div class="text-xs font-bold text-[#8b5cf6] uppercase tracking-wider mb-2">4. Vrije Tijd Partner</div>
+                    <h3 class="text-2xl font-black text-hih-dark mb-4">Poco Loco</h3>
+                    <p class="text-hih-gray text-sm font-semibold mb-2">(Regionaal Ontmoetingshuis)</p>
+                    <p class="text-hih-gray text-xs leading-relaxed mt-4 border-t border-gray-100 pt-4">
+                        Een bekend, laagdrempelig ontmoetingscentrum in hartje Gent waar vrije tijd en cultuur centraal staan.
+                    </p>
+                </div>
+                <!-- Back -->
+                <div class="card-back pocoloco absolute w-full h-full backface-hidden rotate-y-180">
+                    <h4 class="text-lg font-black text-white mb-2 border-b border-white/20 pb-2">De Link met De Moester</h4>
+                    <p class="text-xs text-white/90 leading-relaxed mb-3">
+                        <strong>Wat doen ze?</strong> Poco Loco vangt de nood aan weekend- en avondactiviteiten (ontspanning, reizen, cultuur) op.
+                    </p>
+                    <p class="text-xs text-white/90 leading-relaxed">
+                        <strong>GGZ Context:</strong> Vroeger moesten begeleiders van De Moester én de ateliers leiden, én in het weekend met cliënten op stap. Nu is er een taakverdeling: De Moester = de 'Work-Ordered Day' (werk overdag). Poco Loco = de vrije tijd. Dit bespaart het team burn-outs.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Partner 5: Mental Health Europe -->
+        <div class="flip-card perspective-1000 w-full h-[420px]">
+            <div class="flip-card-inner relative w-full h-full">
+                <!-- Front -->
+                <div class="card-front mhe absolute w-full h-full backface-hidden">
+                    <div class="text-5xl mb-4">🌍</div>
+                    <div class="text-xs font-bold text-[#E35220] uppercase tracking-wider mb-2">5. Internationale Visie</div>
+                    <h3 class="text-2xl font-black text-hih-dark mb-4">M.H.E.</h3>
+                    <p class="text-hih-gray text-sm font-semibold mb-2">(Mental Health Europe)</p>
+                    <p class="text-hih-gray text-xs leading-relaxed mt-4 border-t border-gray-100 pt-4">
+                        Het grootste Europese, onafhankelijke netwerk voor geestelijke gezondheid, sterk gelieerd aan de EU-instellingen in Brussel.
+                    </p>
+                </div>
+                <!-- Back -->
+                <div class="card-back mhe absolute w-full h-full backface-hidden rotate-y-180">
+                    <h4 class="text-lg font-black text-white mb-2 border-b border-white/20 pb-2">De Link met De Moester</h4>
+                    <p class="text-xs text-white/90 leading-relaxed mb-3">
+                        <strong>Wat doen ze?</strong> Zij bewaken mensenrechten in de GGZ. Jochen Van den Steen zit in het bestuur. Tijdens het congres (okt 2026) in Gent zal de hele MHE Board aanwezig zijn.
+                    </p>
+                    <p class="text-xs text-white/90 leading-relaxed">
+                        <strong>GGZ Context:</strong> Via dit netwerk bezocht De Moester 'De Waterheuvel' (het pionierende emancipatorische Clubhouse in Amsterdam). MHE legitimeert De Moester academisch en internationaal als koploper, wat cruciaal is voor hun imago in Vlaanderen.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Conclusie Card -->
+        <div class="flex flex-col justify-center bg-hih-green text-white p-8 rounded-[30px_0_30px_0] shadow-xl border border-hih-orange">
+            <h3 class="text-xl font-black text-hih-orange mb-3">De Kern van de Netwerkzorg</h3>
+            <p class="text-sm text-hih-sand leading-relaxed mb-4">
+                De gehele hervorming van de Geestelijke Gezondheidszorg (Art. 107) stelt dat "geen enkele instelling de cliënt alleen kan genezen". 
+            </p>
+            <p class="text-sm text-hih-sand leading-relaxed">
+                De Moester bewijst hier dat een sterk netwerk van <strong>Wonen (IPSO), Werk (OCMW/PCGS), Vrije Tijd (Poco Loco) en Beleid (MHE)</strong> de enige manier is om een duurzame "Community Mental Health" uit te bouwen in Vlaanderen.
+            </p>
+        </div>
+
+    </div>
+
+</body>
+</html>
+```eof
